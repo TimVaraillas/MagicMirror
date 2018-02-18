@@ -32,6 +32,13 @@
           <p>{{currentWeather.humidity}}%</p>
         </div>
       </div>
+      <ul class="mm-forecasts">
+        <li *ngFor="let forecast of sixteenDaysForecast | slice:0:5">
+          <p>{{forecast.date}}</p>
+          <img src="{{ forecast.icon }}" alt="Temps">
+          <p>{{forecast.dayTemperature | number: '1.0-0'}}°C</p>
+        </li>
+      </ul>
     </div>
   </div>
 </div>

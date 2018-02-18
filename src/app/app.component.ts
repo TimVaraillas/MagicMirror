@@ -63,10 +63,10 @@ export class AppComponent implements OnInit{
     this.appService.getSixteenDaysForecast()
       .then(forecasts => {
         this.sixteenDaysForecast = forecasts;
+        console.log(forecasts);
       })
       .catch(error => this.error = error);
   }
-
 
   ngOnInit() {
     this.getDate();
