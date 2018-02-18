@@ -1,0 +1,101 @@
+.mm-container{
+  padding: 20px;
+}
+
+.mm-columns{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.mm-column{
+
+}
+.mm-column-weather{
+  width: 200px;
+}
+
+.mm-date{
+  text-transform: capitalize;
+  font-size: 1.5em;
+}
+.mm-time {
+  font-size: 4em;
+  line-height: 0.75em;
+}
+.mm-ephemeris{
+
+}
+.mm-city{
+  text-transform: capitalize;
+  font-size: 1.5em;
+  text-align: right;
+}
+
+.mm-today-weather{
+  margin: 8px 0 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.mm-today-weather img{
+  width: 100px;
+}
+.mm-today-weather p{
+  width: 100px;
+  text-align: center;
+}
+.mm-current-temperature{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.mm-current-temperature img{
+  height: 60px;
+  margin-bottom: 4px;
+}
+.mm-current-temperature p{
+  font-size: 3em;
+  margin: 0 4px;
+}
+.mm-today-temperature{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+.mm-today-temperature img{
+  max-height: 30px;
+}
+.mm-today-temperature-minmax{
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.mm-today-temperature-minmax hr{
+  margin: 0;
+  width: 20px;
+}
+
+.mm-today-weather-details{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+.mm-today-weather-detail{
+  margin-left: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.mm-today-weather-detail img{
+  max-height: 20px;
+  flex: 1;
+}
+.mm-today-weather-detail p{
+  flex: 1;
+}

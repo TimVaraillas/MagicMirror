@@ -4,10 +4,12 @@ import { NgModule } from '@angular/core';
 import { LOCALE_ID } from '@angular/core';
 import { AppComponent } from './app.component';
 import { AppService } from './app.service';
+import { KilometersPerHourPipe } from './kilometers-per-hour.pipe';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    KilometersPerHourPipe
   ],
   imports: [
     BrowserModule,

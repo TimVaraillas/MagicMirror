@@ -1,3 +1,37 @@
-<h1>{{now | date:'EEEE dd MMMM yyyy'}}</h1>
-<h2>{{now | date:'HH:mm:ss'}}</h2>
-<h3>{{ephemeris}}</h3>
+<div class="mm-container">
+  <div class="mm-columns mm-column-date">
+    <div class="mm-column">
+      <p class="mm-date">{{now | date:'EEEE dd MMMM yyyy'}}</p>
+      <p class="mm-time">{{now | date:'HH:mm'}}</p>
+      <p class="mm-ephemeris">{{ephemeris}}</p>
+    </div>
+    <div class="mm-column mm-column-weather">
+      <p class="mm-city">{{city.name}}</p>
+      <div class="mm-today-weather">
+        <img src="{{ currentWeather.icon }}" alt="Temps">
+        <p>{{currentWeather.weather | uppercase}}</p>
+      </div>
+      <div class="mm-today-temperature">
+        <div class="mm-current-temperature">
+          <img [src]="'assets/img/temperature.svg'" alt="Température">
+          <p>{{currentWeather.dayTemperature | number: '1.0-0'}}°C</p>
+        </div>
+        <div class="mm-today-temperature-minmax">
+          <p>{{ currentWeather.minTemperature | number: '1.0-0'}}°C</p>
+          <hr>
+          <p>{{currentWeather.maxTemperature | number: '1.0-0'}}°C</p>
+        </div>
+      </div>
+      <div class="mm-today-weather-details">
+        <div class="mm-today-weather-detail">
+          <img [src]="'assets/img/wind.svg'" alt="Wind speed">
+          <p>{{currentWeather.windSpeed | kilometersPerHour | number:'1.0-0' }} KM/H</p>
+        </div>
+        <div class="mm-today-weather-detail">
+          <img [src]="'assets/img/humidity.svg'" alt="Humidity">
+          <p>{{currentWeather.humidity}}%</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
