@@ -18,10 +18,11 @@
 .mm-date{
   text-transform: capitalize;
   font-size: 1.5em;
+  line-height: 1em;
 }
 .mm-time {
   font-size: 4em;
-  line-height: 0.75em;
+  line-height: 1em;
 }
 .mm-ephemeris{
 
@@ -30,10 +31,11 @@
   text-transform: capitalize;
   font-size: 1.5em;
   text-align: right;
+  line-height: 1em;
 }
 
 .mm-today-weather{
-  margin: 8px 0 2px;
+  margin: 15px 0 2px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -53,7 +55,6 @@
 }
 .mm-current-temperature img{
   height: 60px;
-  margin-bottom: 4px;
 }
 .mm-current-temperature p{
   font-size: 3em;
@@ -110,7 +111,11 @@
 }
 .mm-forecasts li p{
   text-transform: capitalize;
-  margin-left: 15px;
+  margin-left: 5px;
+}
+.mm-forecasts li p:last-child{
+  width: 40px;
+  text-align: right;
 }
 .mm-forecasts li img{
   max-width: 20px;
