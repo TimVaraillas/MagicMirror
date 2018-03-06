@@ -8,11 +8,14 @@ import 'rxjs/add/operator/catch';
 
 @Injectable()
 export class AppService {
+  private apiKey = 'yourAPIkey'
+  private baseURL = 'http://api.openweathermap.org/data/2.5/'
 
   private city: City = new City();
   private forecasts: Forecast[] = new Array<Forecast>();
-  private sixteenDaysForecastURL = 'http://api.openweathermap.org/data/2.5/forecast/daily?units=metric&id=6455645&appid=b16d8bc75918fd59e60e1174740f7b3f&lang=fr';
-  private currentWeatherURL = 'http://api.openweathermap.org/data/2.5/weather?id=6455645&units=metric&appid=cc6b5d9691505e43aa53a6db76276b0f&lang=fr';
+
+  private sixteenDaysForecastURL = `${this.baseURL}forecast/daily?units=metric&id=6455645&appid=${this.apiKey}&lang=fr`;
+  private currentWeatherURL = `${this.baseURL}weather?id=6455645&units=metric&appid=${this.apiKey}&lang=fr`;
 
   constructor(private http: Http) { }
 
