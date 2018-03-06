@@ -14,8 +14,9 @@ import { City } from './models/city';
 export class AppComponent implements OnInit{
 
   now: Date = new Date();
-  ephemeris: any;
   city: City = new City();
+  ephemeris: any;
+  quote: any;
   sixteenDaysForecast: Forecast[] = [];
   currentWeather: Forecast = new Forecast();
   error: any;
@@ -30,7 +31,22 @@ export class AppComponent implements OnInit{
     }, 1000);
   }
 
-  getEphemeris(): void {
+  getQuote(): void {
+    this.appService.getEphemeris().subscribe(res => {
+      res.forEach(eph => {
+        const day = this.now.getDate();
+        const month = this.now.getMonth() + 1;
+        if (eph.date.jour === day && eph.date.mois === month) {
+          const quotes = eph.quotes;
+          this.quote = quotes[Math.floor((Math.random() * quotes.length))];
+        }
+      });
+    }, error => {
+      console.log(error);
+    });
+  }
+
+  getEphemeris():void {
     this.appService.getEphemeris().subscribe(res => {
       res.forEach(eph => {
         const day = this.now.getDate();
@@ -54,7 +70,6 @@ export class AppComponent implements OnInit{
     this.appService.getCurrentWeather()
       .then(currentWeather => {
         this.currentWeather = currentWeather;
-        console.log(currentWeather);
       })
       .catch(error => this.error = error);
   }
@@ -63,7 +78,6 @@ export class AppComponent implements OnInit{
     this.appService.getSixteenDaysForecast()
       .then(forecasts => {
         this.sixteenDaysForecast = forecasts;
-        console.log(forecasts);
       })
       .catch(error => this.error = error);
   }
@@ -71,9 +85,17 @@ export class AppComponent implements OnInit{
   ngOnInit() {
     this.getDate();
     this.getEphemeris();
+    this.getQuote();
     this.getCity();
     this.getCurrentWeather();
     this.getForecasts();
+    setInterval(() => {
+      this.getEphemeris();
+      this.getQuote();
+      this.getCity();
+      this.getCurrentWeather();
+      this.getForecasts();
+    }, 60000);
   }
 
 }

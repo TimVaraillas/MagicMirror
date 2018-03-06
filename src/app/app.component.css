@@ -1,5 +1,5 @@
 .mm-container{
-  padding: 20px;
+  padding: 50px;
 }
 
 .mm-columns{
@@ -12,24 +12,25 @@
 
 }
 .mm-column-weather{
-  width: 200px;
+  width: 400px;
 }
 
 .mm-date{
   text-transform: capitalize;
-  font-size: 1.5em;
+  font-size: 3em;
   line-height: 1em;
 }
 .mm-time {
   font-size: 4em;
+  font-weight: 700;
   line-height: 1em;
 }
 .mm-ephemeris{
-
+  font-size: 2em;
 }
 .mm-city{
   text-transform: capitalize;
-  font-size: 1.5em;
+  font-size: 3em;
   text-align: right;
   line-height: 1em;
 }
@@ -41,11 +42,13 @@
   align-items: flex-end;
 }
 .mm-today-weather img{
-  width: 100px;
+  width: 200px;
 }
 .mm-today-weather p{
-  width: 100px;
+  width: 200px;
+  margin-top: 5px;
   text-align: center;
+  font-size: 1.5em;
 }
 .mm-current-temperature{
   display: flex;
@@ -57,7 +60,8 @@
   height: 60px;
 }
 .mm-current-temperature p{
-  font-size: 3em;
+  font-size: 4em;
+  font-weight: 700;
   margin: 0 4px;
 }
 .mm-today-temperature{
@@ -67,7 +71,9 @@
   justify-content: flex-end;
 }
 .mm-today-temperature img{
-  max-height: 30px;
+  max-height: 45px;
+  margin-top: 5px;
+  margin-right: 5px;
 }
 .mm-today-temperature-minmax{
   margin-left: 10px;
@@ -75,6 +81,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  font-size: 1.5em;
 }
 .mm-today-temperature-minmax hr{
   margin: 0;
@@ -82,23 +89,25 @@
 }
 
 .mm-today-weather-details{
+  margin-top: 10px;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
 }
 .mm-today-weather-detail{
-  margin-left: 15px;
+  margin-left: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 .mm-today-weather-detail img{
-  max-height: 20px;
+  max-height: 30px;
   flex: 1;
 }
 .mm-today-weather-detail p{
   flex: 1;
+  font-size: 1.5em;
 }
 .mm-forecasts{
 
@@ -110,15 +119,28 @@
   justify-content: flex-end;
 }
 .mm-forecasts li p{
+  font-size: 1.5em;
   text-transform: capitalize;
-  margin-left: 5px;
+  margin-left: 15px;
 }
 .mm-forecasts li p:last-child{
   width: 40px;
   text-align: right;
 }
 .mm-forecasts li img{
-  max-width: 20px;
-  max-height: 20px;
+  max-width: 25px;
+  max-height: 25px;
   margin-left: 15px;
+  margin-top: 5px;
+}
+.mm-quote{
+  position: absolute;
+  bottom: 50px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: italic;
+  font-size: 2em;
 }
